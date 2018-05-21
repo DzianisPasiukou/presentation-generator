@@ -1,0 +1,5 @@
+<app-slide-view [style.width.px] = "width" class="view" [styles]="style"></app-slide-view>
+<div class="style">
+  <div class="separator" #separator (mousedown)="mouseDown()" (dragstart)="dragStart()"></div>
+  <ace-editor [mode]="'css'" [text]="style" (textChanged)="style = $event" style="height:100%; font-size: 24px;"></ace-editor><!--[theme]="'eclipse'" -->
+</div>

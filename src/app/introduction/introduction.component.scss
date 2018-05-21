@@ -1,0 +1,47 @@
+:host {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .gr {
+    width: 500px;
+    min-height: 200px;
+    display: grid;
+    grid-gap: 5px;
+    margin-bottom: 20px;
+    grid-template-areas: "a a a b"
+                         "c c d d"
+                         "c c e e";
+
+    .item {
+      min-height: 75px;
+    }
+
+    .item:nth-child(1) {
+      grid-area: a;
+    }
+
+    .item:nth-child(2) {
+      grid-area: b;
+    }
+
+    .item:nth-child(3) {
+      grid-area: c;
+    }
+
+    .item:nth-child(4) {
+      grid-area: d;
+    }
+
+    .item:nth-child(5) {
+      grid-area: e;
+    }
+  }
+  h1 {
+    font-size: 75px;
+    color: rgb(49, 49, 49);
+    font-family: "Comic Sans MS", sans-serif;
+  }
+}
