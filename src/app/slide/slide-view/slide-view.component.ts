@@ -8,6 +8,9 @@ import { AfterViewInit, Component, Input, OnInit, ViewEncapsulation } from '@ang
 })
 export class SlideViewComponent implements OnInit, AfterViewInit {
 
+  @Input('htmlContent')
+  public htmlContent: string;
+
   private _style = '';
   private styleElem;
 

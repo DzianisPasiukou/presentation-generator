@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SlideComponent } from './slide/slide.component';
 import { AceEditorModule } from 'ng2-ace-editor';
+
 import { SlideViewComponent } from './slide/slide-view/slide-view.component';
 import { SlidesService } from 'app/slides.service';
 import { SupportComponent } from './support/support.component';

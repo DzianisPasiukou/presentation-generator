@@ -7,7 +7,7 @@ import { EndComponent } from 'app/end/end.component';
 import { TheoryComponent } from './theory/theory.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/introduction', pathMatch: 'full'},
+  { path: '', redirectTo: '/slides/1', pathMatch: 'full'},
   { path: 'slides/:number', component: SlideComponent },
   { path: 'theory/:img', component: TheoryComponent },
   { path: 'support', component: SupportComponent },
