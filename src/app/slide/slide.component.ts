@@ -18,6 +18,8 @@ export class SlideComponent {
   public html = '';
   public editor;
 
+  public consoleLogsText = '';
+
   width = parseFloat(document.body.style.width) / 2;
 
   @ViewChild('separator') separator: ElementRef;
@@ -57,7 +59,9 @@ export class SlideComponent {
 
   mouseDown() {
     document.body.onmousemove = event => {
-      this.columns = `${event.clientX}px 1fr`;
+      console.log(event.clientX);
+
+      this.columns = `${event.clientX}px auto`;
     };
     document.body.ondragstart = () => false;
     document.body.onmouseup = () => {
@@ -82,8 +86,20 @@ export class SlideComponent {
   }
 
   onRun(): void {
+    // let slideViewContainerFrame = document.getElementById('slideViewContainerFrame');
+    // (slideViewContainerFrame as any).window.eval(this.editorElement.oldText);
 
+    window.frames[0].window.eval(this.editorElement.text);
 
-    eval(this.editorElement.oldText);
+    let consoleLogMathes = /console\.log\([^)]+\);/g;
+
+    let consoleLogs = consoleLogMathes.exec(this.editorElement.text);
+    this.consoleLogsText = consoleLogs.join('\n');
+
+    // eval(this.editorElement.oldText);
+  }
+
+  onClean(): void {
+    window.frames[0].window.eval("document.body.innerHTML = '';");
   }
 }

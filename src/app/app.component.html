@@ -1,9 +1,15 @@
-<router-outlet></router-outlet>
-<div class="wrapper">
-  <div class="panel">
+<div class="app-container">
+    <div class="app-container__page">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="app_container__footer">
+        <!-- <div class="panel">
     <div (click)="prevSlide()"><</div>
     <div (click)="num()">{{slideNumber}}</div>
     <div (click)="nextSlide()">></div>
-  </div>
-</div>
+  </div> -->
 
+        <mat-paginator [pageSize]="slidesCount">
+        </mat-paginator>
+    </div>
+</div>

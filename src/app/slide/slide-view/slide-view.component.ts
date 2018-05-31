@@ -11,6 +11,9 @@ export class SlideViewComponent implements OnInit, AfterViewInit {
   @Input('htmlContent')
   public htmlContent: string;
 
+  @Input('consoleContent')
+  public consoleContent: string;
+
   private _style = '';
   private styleElem;
 

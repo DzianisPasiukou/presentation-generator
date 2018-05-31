@@ -1,1 +1,1 @@
-// use slide-view__container to wrap your content
+document.body.innerHTML = '<h1>hello</h1>';

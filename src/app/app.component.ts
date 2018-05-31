@@ -1,7 +1,7 @@
-import {Component, EventEmitter, ViewContainerRef} from '@angular/core';
-import {SlidesService} from 'app/slides.service';
-import {ModalService} from 'app/modal/modal.service';
-import {IModalComponent} from './modal/IModalComponent';
+import { Component, EventEmitter, ViewContainerRef } from '@angular/core';
+import { SlidesService } from 'app/slides.service';
+import { ModalService } from 'app/modal/modal.service';
+import { IModalComponent } from './modal/IModalComponent';
 
 @Component({
     selector: 'app-root',
@@ -13,11 +13,17 @@ export class AppComponent {
     slideNumber = 1;
 
     constructor(private slidesService: SlidesService,
-                public appRef: ViewContainerRef,
-                private modalService: ModalService) {
+        public appRef: ViewContainerRef,
+        private modalService: ModalService) {
         this.slidesService.getSlideNumber().subscribe(num => {
             this.slideNumber = num;
         });
+    }
+
+    get slidesCount(): number {
+        return this.slidesService ?
+            this.slidesService.getSlidesCount() :
+            0;
     }
 
     nextSlide() {
@@ -27,8 +33,8 @@ export class AppComponent {
     num() {
         const instance = this.modalService.open<TmpComponent>(
             TmpComponent,
-            {text: 'SOME TEXT!'},
-            {width: '500px', height: '300px'});
+            { text: 'SOME TEXT!' },
+            { width: '500px', height: '300px' });
     }
 
     prevSlide() {

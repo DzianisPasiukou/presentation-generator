@@ -1,21 +1,41 @@
-:host{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 90vh
+// :host {
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     height: 90vh
+// }
+mat-toolbar {
+    grid-area: header;
+    height: 50px;
+}
+
+app-slide-view {
+    grid-area: slide;
 }
 
 .style {
-  width: 100%;
-  .separator {
+    grid-area: code;
+}
+
+:host {
+    display: grid; // grid-template-rows: auto;
+    grid-template-areas: "header header" "slide code"; // height: 90vh;
+    grid-template-rows: 64px auto; // grid-gap: 50px;
     height: 100%;
-    width: 35px;
-    position: absolute;
-    z-index: 10;
-    cursor: col-resize;
-  }
+}
+
+.style {
+    width: 100%;
+    position: relative;
+    .separator {
+        height: 100%;
+        width: 35px;
+        position: absolute;
+        z-index: 10;
+        cursor: col-resize;
+    }
 }
 
 .view {
-  user-select: none;
-  overflow: auto;
+    user-select: none;
+    overflow: auto;
 }

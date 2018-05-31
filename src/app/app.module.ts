@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatButtonModule, MatCheckboxModule, MatPaginatorModule, MatToolbarModule, MatIconModule } from '@angular/material';
+
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -15,7 +19,6 @@ import { IntroductionComponent } from './introduction/introduction.component';
 import { EndComponent } from './end/end.component';
 import { ModalModule } from 'app/modal/modal.module';
 import { TmpComponent } from 'app/app.component';
-
 
 @NgModule({
   declarations: [
@@ -32,6 +35,12 @@ import { TmpComponent } from 'app/app.component';
     BrowserModule,
     AppRoutingModule,
     AceEditorModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatPaginatorModule,
+    MatToolbarModule,
+    MatIconModule,
     ModalModule.forRoot()
   ],
   providers: [SlidesService],

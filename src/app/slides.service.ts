@@ -29,8 +29,19 @@ export class SlidesService {
         type: 'javascript',
         text: require('text-loader!./generator/2/script.js')
       }
+    },
+    {
+      route: ['slides', 2],
+      editor: {
+        type: 'javascript',
+        text: require('text-loader!./generator/2/script.js')
+      }
     }
   ];
+
+  public getSlidesCount(): number {
+    return this.slides.length;
+  }
 
   public getSlide() {
     return this.slides[this.slideNumber];

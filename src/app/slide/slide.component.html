@@ -1,9 +1,23 @@
-<app-slide-view [style.width.px]="width" class="view" [styles]="style" [htmlContent]="html"></app-slide-view>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <!-- <span>Third Line</span>
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon">favorite</mat-icon>
+        <mat-icon class="example-icon">delete</mat-icon> -->
+        <div>
+            <button mat-button (click)="onRun()">Run</button>
+        </div>
+        <div>
+            <button mat-button (click)="onClean()">Clean</button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<app-slide-view [style.width.px]="width" class="view" [styles]="style" [htmlContent]="html" [consoleContent]="consoleLogsText"></app-slide-view>
 <div class="style">
-    <div>
-        <button (click)="onRun()">Run!</button>
-    </div>
+
     <div class="separator" #separator (mousedown)="mouseDown()" (dragstart)="dragStart()"></div>
-    <ace-editor [mode]="editor.type" [text]="editor.text" (textChanged)="onTextChanged($event)" style="height:100%; font-size: 24px;" #editorElement [theme]="'monokai'"></ace-editor>
+    <ace-editor [mode]="editor.type" [text]="editor.text" (textChanged)="onTextChanged($event)" style="height:100%; font-size: 24px;"
+        #editorElement [theme]="'monokai'"></ace-editor>
     <!--[theme]="'eclipse'" -->
 </div>
